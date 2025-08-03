@@ -11,7 +11,7 @@ Program that sorts stacks using radix sort
 
 ## 📖 Introduction
 
-> [!INFO]
+> [!NOTE]
 > - Only digits are allowed (with a single sign) as input, separated by spaces
 
 > The following are considered errors
