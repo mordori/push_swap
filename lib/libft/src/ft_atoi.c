@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/23 14:50:08 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/03 14:48:47 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,28 @@ int	ft_atoi(const char *str)
 	number = 0;
 	while (ft_isdigit(*str))
 		number = number * 10 + (*str++ - '0');
+	return (sign * number);
+}
+
+int64_t	ft_atol(char *str, char *end)
+{
+	int		sign;
+	int64_t	number;
+
+	if (!str)
+		return (ERROR);
+
+	while (ft_isspace(*str))
+		++str;
+	sign = 1;
+	if ((*str == '-' || *str == '+') && *str++ == '-')
+		sign = -1;
+	number = 0;
+	while (ft_isdigit(*str))
+	{
+		number = number * 10 + (*str++ - '0');
+		*end = *str;
+	}
 	return (sign * number);
 }
 

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:46:28 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/23 19:58:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/03 14:40:16 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ size_t		ft_ucountdigits(uintptr_t n, const size_t len);
 char		*ft_uitoa(uintptr_t n, const char *base);
 char		*ft_itoa(int n, const char *base);
 uint32_t	ft_atouint32_t_base(const char *str, const char *base);
+int64_t		ft_atol(char *str, char *end);
 
 #endif

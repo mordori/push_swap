@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/24 22:08:56 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 01:29:24 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,27 @@ bool	vector_add(t_vector *vec, void *new)
 	return (true);
 }
 
+
+bool	vector_insert(t_vector *vec, void *new, size_t index)
+{
+	size_t	i;
+
+	if (!vec || !vec->size || index > vec->total)
+		return (false);
+	if (vec->total == vec->size)
+		if (!vector_resize(vec, vec->size * 2))
+			return (false);
+	i = vec->total;
+	while (i > index)
+	{
+		vec->items[i] = vec->items[i - 1];
+		--i;
+	}
+	vec->items[index] = new;
+	vec->total++;
+	return (true);
+}
+
 /**
  * Removes an item with the `index` in `vec`.
  *
@@ -76,7 +97,7 @@ bool	vector_del(t_vector *vec, size_t index)
 
 	if (!vec || !vec->total || index >= vec->total)
 		return (false);
-	if (vec->is_heap)
+	if (vec->is_heap && vec->is_shrink)
 	{
 		free(vec->items[index]);
 		vec->items[index] = NULL;
@@ -87,7 +108,7 @@ bool	vector_del(t_vector *vec, size_t index)
 		++index;
 	}
 	vec->total--;
-	if (vec->size > min_size && vec->total > 0 && \
+	if (vec->is_shrink && vec->size > min_size && vec->total > 0 && \
 vec->total == vec->size / 4)
 		if (!vector_resize(vec, vec->size / 2))
 			return (false);
@@ -105,7 +126,6 @@ vec->total == vec->size / 4)
 bool	vector_free(t_vector *vec)
 {
 	size_t	i;
-
 	if (!vec || !vec->size)
 		return (false);
 	i = 0;

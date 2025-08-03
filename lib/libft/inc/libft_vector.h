@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:30:08 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/23 19:59:47 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/03 02:54:11 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,18 @@ typedef struct s_vector
 	size_t	size;
 	size_t	total;
 	bool	is_heap;
+	bool	is_shrink;
 }				t_vector;
 
 bool	vector_add(t_vector *vec, void *new);
 bool	vector_free(t_vector *vec);
 bool	vector_del(t_vector *vec, size_t index);
 void	*vector_get(t_vector *vec, size_t index);
-bool	vector_init(t_vector *vec, bool is_heap);
+bool	vector_init(t_vector *vec, bool is_heap, bool is_shrink);
 bool	vector_set(t_vector *vec, size_t index, void *new);
-int		vector_size(t_vector *vec);
-int		vector_total(t_vector *vec);
+size_t	vector_size(t_vector *vec);
+size_t	vector_total(t_vector *vec);
 void	*vector_getlast(t_vector *vec);
+bool	vector_insert(t_vector *vec, void *new, size_t index);
 
 #endif

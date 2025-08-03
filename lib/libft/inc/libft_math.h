@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/31 02:30:47 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 01:43:56 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ t_vec4	vec4_n(float n);
 t_vec4	vec4_add(t_vec4 a, t_vec4 b);
 t_vec4	vec4_sub(t_vec4 a, t_vec4 b);
 t_vec4	vec4_scale(t_vec4 v, float s);
+bool	is_prime(size_t num);
+size_t	next_prime(size_t start);
 
 #endif

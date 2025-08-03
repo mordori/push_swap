@@ -1,6 +1,7 @@
 # push-swap
 ## ✨ Features
-brief
+Program that sorts stacks using radix sort.
+- Uses two stacks a and b.
 -
 
 <p align="center">
@@ -16,18 +17,18 @@ brief
 ``` git
 git clone https://github.com/mordori/push-swap.git push-swap && cd push-swap && make
 ```
-- Execute the program with numbers in random order, for example
+- Execute the program with numbers in a random order, for example
 ``` bash
 ./push_swap -4 7 -10 2 5 1 -8
 ```
 
 > [!TIP]
-> Use shuf to generate `n` numbers from a range in randomized order
+> Use `shuf` to generate `n` numbers from a range in a randomized order
 > ``` bash
 > ./push_swap $(shuf -i -100-100 -n 10)
 > ```
 
-The program will print the called operations and output the total amount in the end
+The program will sort the numbers, print the called operations, and output the total amount of calls in the end.
 
 - To delete all of the compiled files, use
 ``` Makefile
