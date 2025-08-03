@@ -13,8 +13,9 @@ Program that sorts stacks using radix sort
 
 > [!NOTE]
 > - Only digits are allowed (with a single sign) as input, separated by spaces
-
+>
 > The following are considered errors
+>
 > - Numbers less than INT_MIN (-2147483648) or greater than INT_MAX (2147483647)
 > - Empty argument, e.g. " "
 > - Duplicate numbers
