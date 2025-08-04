@@ -1,13 +1,12 @@
 # push-swap
 ## ✨ Features
-Program that sorts stacks using indexed radix sort
+Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) in ascending order using indexed LSD [radix sort](https://en.wikipedia.org/wiki/Radix_sort).
 - Uses two LIFO (Last In - First Out) stacks `a` and `b` (vector arrays)
-- Parses user input and checks for duplicates with a hashtable
+- Parses and validates user input for duplicates with a hashtable
+- Indexes the numbers using insert sort
 - Sorts the stacks with `pb`, `pa`, and `ra` operations
-
-<p align="center">
-  <img src="doc/" alt="Demo" />
-</p>
+- Worst-case [time complexity](https://en.wikipedia.org/wiki/Time_complexity) is $O(n^2)$ with insert sort as the bottleneck
+- [Space complexity](https://en.wikipedia.org/wiki/Space_complexity) is $O(n)$
 
 ## 📖 Introduction
 
