@@ -5,7 +5,7 @@ Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_
 - Parses and validates user input for duplicates with a hashtable
 - Indexes the numbers using insert sort
 - Sorts the stacks with `pb`, `pa`, and `ra` operations
-- Worst-case [time complexity](https://en.wikipedia.org/wiki/Time_complexity) is $O(n^2)$ with insert sort as the bottleneck
+- Worst-case [time complexity](https://en.wikipedia.org/wiki/Time_complexity) is $O(n^2)$ with insert sort as the dominant term
 - [Space complexity](https://en.wikipedia.org/wiki/Space_complexity) is $O(n)$
 
 ## 📖 Introduction
