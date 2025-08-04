@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:14:46 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 01:43:34 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 04:11:31 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ float	ft_lerp(float a, float b, float t)
 	return ((1.0f - t) * a + t * b);
 }
 
-int	ft_imax(int a, int b)
+int32_t	ft_imax(int32_t a, int32_t b)
 {
 	if (a > b)
 		return (a);
 	return (b);
 }
 
-int	ft_imin(int a, int b)
+int32_t	ft_imin(int32_t a, int32_t b)
 {
 	if (a > b)
 		return (b);

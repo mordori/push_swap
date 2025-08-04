@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/02 16:27:41 by myli-pen          #+#    #+#              #
-#    Updated: 2025/08/04 01:49:23 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/08/04 09:21:34 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ DIR_DEP		=dep/
 HEADERS		=$(addprefix -I , \
 				$(DIR_INC) $(DIR_LIBFT)$(DIR_INC))
 SRCS		=$(addprefix $(DIR_SRC), \
-				main.c parsing.c operations.c sorting.c)
+				main.c parsing.c operations.c sorting.c indexing.c)
 OBJS		=$(patsubst $(DIR_SRC)%.c, $(DIR_OBJ)%.o, $(SRCS))
 DEPS		=$(patsubst $(DIR_SRC)%.c, $(DIR_DEP)%.d, $(SRCS))
 

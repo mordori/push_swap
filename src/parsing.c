@@ -6,42 +6,67 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:46:37 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 01:47:47 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 09:29:39 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static inline void	parse_numbers(t_vector *a, char **elems, char *end, int *index);
+static inline void	parse_numbers(t_vector *a, char **elems);
+static inline void	check_duplicates(t_vector *a, size_t i);
 
 void	parse_input(int argc, char *argv[], t_vector *a)
 {
 	int		i;
-	int		index;
-	char	*end;
 	char	**elems;
 
-	i = 1;
-	index = 0;
-	end = malloc(sizeof (*end));
-	while (i < argc)
+	i = argc - 1;
+	while (i > 0)
 	{
 		elems = ft_split(argv[i], ' ');
-		if (!elems || !*elems)
-			free(end), ft_error(a, "ELEMS ALLOC", NULL);
-		parse_numbers(a, elems, end, &index);
+		if (!elems)
+			ft_error(a, "ELEMS ALLOC", NULL);
+		if (!*elems)
+			ft_free_split(elems), ft_error(a, "ELEMS ALLOC", NULL);
+		parse_numbers(a, elems);
 		ft_free_split(elems);
-		++i;
+		--i;
 	}
-	free(end);
+	check_duplicates(a, 0);
 }
 
-void	check_duplicates(t_vector *a, size_t i)
+static inline void	parse_numbers(t_vector *a, char **elems)
+{
+	int		i;
+	int64_t	val;
+	t_pair	*pair;
+	char	end;
+
+	i = 0;
+	while (elems[i])
+		++i;
+	while (--i >= 0)
+	{
+		end = 'e';
+		pair = malloc(sizeof (*pair));
+		if (!pair)
+			ft_free_split(elems), ft_error(a, "NUM ALLOC", NULL);
+		pair->index = -1;
+		val = ft_atol(elems[i], &end);
+		if (end || val > INT_MAX || val < INT_MIN)
+			free(pair), ft_free_split(elems), ft_error(a, "INPUT ABOMINATION", NULL);
+		pair->value = (int32_t)val;
+		if (!vector_add(a, pair))
+			free(pair), ft_free_split(elems), ft_error(a, "A ADD", NULL);
+	}
+}
+
+static inline void	check_duplicates(t_vector *a, size_t i)
 {
 	int			*hash_table;
 	bool		*used;
-	int			value;
-	uint32_t	index;
+	int			val;
+	uint32_t	idx;
 	size_t		prime;
 
 	prime = next_prime(vector_total(a) * 2);
@@ -51,38 +76,16 @@ void	check_duplicates(t_vector *a, size_t i)
 		free(hash_table), free(used), ft_error(a, "HASH", NULL);
 	while (i < vector_total(a))
 	{
-		value = *(int *)vector_get(a, i++);
-		index = ((uint32_t)value) % prime;
-		while (used[index])
+		val = ((t_pair *)vector_get(a, i++))->value;
+		idx = ((uint32_t)val) % prime;
+		while (used[idx])
 		{
-			if (hash_table[index] == value)
+			if (hash_table[idx] == val)
 				free(hash_table), free(used), ft_error(a, "DUPLICATE", NULL);
-			index = (index + 1) % prime;
+			idx = (idx + 1) % prime;
 		}
-		hash_table[index] = value;
-		used[index] = true;
+		hash_table[idx] = val;
+		used[idx] = true;
 	}
 	free(hash_table), free(used);
-}
-
-static inline void	parse_numbers(t_vector *a, char **elems, char *end, int *index)
-{
-	int64_t	*num;
-	int		j;
-
-	j = 0;
-	while (elems[j])
-	{
-		*end = 'e';
-		num = malloc(sizeof (*num));
-		if (!num)
-			free(end), ft_free_split(elems), ft_error(a, "NUM ALLOC", NULL);
-		*num = ft_atol(elems[j], end);
-		if ((*end) || *num > INT_MAX || *num < INT_MIN)
-			free(end), ft_free_split(elems), ft_error(a, "INPUT ABOMINATION", NULL);
-		if (!vector_add(a, num))
-			free(end), ft_error(a, "A ADD", NULL);
-		++index;
-		++j;
-	}
 }
