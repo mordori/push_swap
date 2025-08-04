@@ -6,19 +6,20 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/02 16:27:41 by myli-pen          #+#    #+#              #
-#    Updated: 2025/08/05 01:07:32 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/08/05 01:22:42 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MAKEFLAGS	+= --no-print-directory
 NAME		=push_swap
 
 LIBFT		=$(DIR_LIBFT)libft.a
 
+VECTOR_SIZE	=1024
+
 CC			=cc
 CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3
 LDFLAGS		=
-VECTOR_SIZE	=1024
+MAKEFLAGS	+= --no-print-directory
 
 DIR_LIBFT	=$(DIR_LIB)libft/
 DIR_INC		=inc/
