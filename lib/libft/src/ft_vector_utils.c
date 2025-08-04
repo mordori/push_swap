@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 01:29:24 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 19:09:30 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ bool	vector_add(t_vector *vec, void *new)
 	vec->items[vec->total++] = new;
 	return (true);
 }
-
 
 bool	vector_insert(t_vector *vec, void *new, size_t index)
 {
@@ -126,6 +125,7 @@ vec->total == vec->size / 4)
 bool	vector_free(t_vector *vec)
 {
 	size_t	i;
+
 	if (!vec || !vec->size)
 		return (false);
 	i = 0;
@@ -142,17 +142,4 @@ bool	vector_free(t_vector *vec)
 	vec->size = 0;
 	vec->items = NULL;
 	return (true);
-}
-
-/**
- * Returns the last item in `vec`.
- *
- * @param vec Vector to be operated.
- * @return Item if successful, else NULL.
- */
-void	*vector_getlast(t_vector *vec)
-{
-	if (!vec || !vec->total)
-		return (NULL);
-	return (vec->items[vec->total - 1]);
 }

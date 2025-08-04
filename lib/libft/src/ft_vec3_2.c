@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:28:02 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/07/31 02:09:38 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 18:48:50 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,3 @@ float	vec3_length(t_vec3 v)
 {
 	return (sqrt(vec3_dot(v, v)));
 }
-

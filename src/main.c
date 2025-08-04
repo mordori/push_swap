@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:16 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 09:28:26 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 20:21:01 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (EXIT_SUCCESS);
-	a = malloc(sizeof (* a));
+	a = malloc(sizeof (*a));
 	if (!a || !vector_init(a, true, false))
-		ft_error(NULL, "A INIT", NULL);
+		(free(a), ft_error(NULL, "A INIT", NULL));
 	parse_input(argc, argv, a);
 	index_values(a);
 	radix_sort(a);
+	print_stack(a);
 	vector_free(a);
 	free(a);
 	return (EXIT_SUCCESS);

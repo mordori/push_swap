@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:20:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 09:21:17 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 20:10:40 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,19 @@ static inline void	insert_sort(t_pair *arr, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	t_pair	key;
+	t_pair	temp;
 
 	i = 1;
 	while (i < size)
 	{
-		key = arr[i];
+		temp = arr[i];
 		j = i;
-		while (j > 0 && arr[j - 1].value > key.value)
+		while (j > 0 && arr[j - 1].value > temp.value)
 		{
 			arr[j] = arr[j - 1];
 			--j;
 		}
-		arr[j] = key;
+		arr[j] = temp;
 		++i;
 	}
 }
