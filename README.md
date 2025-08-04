@@ -12,17 +12,17 @@ Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_
 
 > [!NOTE]
 > ## 🔡 Input
-> ✔ Only `digits` are allowed (with a single sign) as input, separated by `spaces`
->
-> The following are considered errors:
->
-> &nbsp;&nbsp;&nbsp;&nbsp;❌ Numbers less than `INT_MIN` (-2147483648) or greater than `INT_MAX` (2147483647)
->
-> &nbsp;&nbsp;&nbsp;&nbsp;❌ Empty argument, e.g. `" "`
->
-> &nbsp;&nbsp;&nbsp;&nbsp;❌ Duplicate numbers
->
-> &nbsp;&nbsp;&nbsp;&nbsp;❌ Leading or trailing non-digit characters, e.g. `"a1" "2b"`
+✔ Only `digits` are allowed (with a single sign) as input, separated by `spaces`
+
+The following are considered errors:
+
+&nbsp;&nbsp;&nbsp;&nbsp;❌ Numbers less than `INT_MIN` (-2147483648) or greater than `INT_MAX` (2147483647)
+
+&nbsp;&nbsp;&nbsp;&nbsp;❌ Empty argument, e.g. `" "`
+
+&nbsp;&nbsp;&nbsp;&nbsp;❌ Duplicate numbers
+
+&nbsp;&nbsp;&nbsp;&nbsp;❌ Leading or trailing non-digit characters, e.g. `"a1" "2b"`
 
 > [!TIP]
 > ## 🚀 How to use
@@ -49,7 +49,7 @@ or
 > ./push_swap $(shuf -i 0-100 -n 10) | wc -l
 > ```
 
-The program will sort the numbers and print the called operations.
+The program will sort the numbers and print out the called operations.
 
 - To delete all of the compiled files, use
 ``` Makefile
