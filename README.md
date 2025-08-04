@@ -12,7 +12,7 @@ Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_
 
 > [!NOTE]
 > ## 🔡 Input
-> &nbsp;&nbsp;&nbsp;&nbsp;✔ Only `digits` are allowed (with a single sign) as input, separated by `spaces`
+> ✔ Only `digits` are allowed (with a single sign) as input, separated by `spaces`
 >
 > The following are considered errors:
 >
