@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:49:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 20:19:26 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 23:48:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	radix_sort(t_vector *a)
 	int32_t			index;
 
 	b = malloc(sizeof (t_vector));
-	if (!b || !vector_init(b, false, false))
-		(free(b), ft_error(a, "B INIT", NULL));
+	if (!b || !vector_init(b, true, false))
+		(free(b), ft_error(a, NULL));
 	while (i++ < max_index_bits(a))
 	{
 		j = 0;
@@ -35,7 +35,7 @@ void	radix_sort(t_vector *a)
 			if (((index >> (i - 1)) & 1) == 0)
 				pb(a, b);
 			else
-				ra(a);
+				ra(a, b);
 		}
 		while (vector_total(b))
 			pa(a, b);

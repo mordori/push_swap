@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/02 16:27:41 by myli-pen          #+#    #+#              #
-#    Updated: 2025/08/04 18:46:04 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/08/05 01:07:32 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ GREEN		=\033[1;32m
 RED			=\033[1;31m
 COLOR		=\033[0m
 
-all: $(DIR_OBJ) $(LIBFT) $(NAME)
+all: $(LIBFT) $(NAME)
 
 $(DIR_OBJ):
 	@mkdir -p $(DIR_LIB) $(DIR_OBJ) $(DIR_DEP)
@@ -54,7 +54,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 	@echo "$(YELLOW) [✔] $(NAME) created$(COLOR)"
 
-$(DIR_OBJ)%.o: $(DIR_SRC)%.c
+$(DIR_OBJ)%.o: $(DIR_SRC)%.c | $(DIR_OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(HEADERS) -D VECTOR_SIZE=$(VECTOR_SIZE)
 	@echo "$(GREEN) [+]$(COLOR) compiling $@"
 

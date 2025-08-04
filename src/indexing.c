@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:20:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 20:10:40 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/04 23:56:18 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	index_values(t_vector *a)
 	size = vector_total(a);
 	temp = malloc(sizeof(*temp) * size);
 	if (!temp)
-		ft_error(a, "TEMP ALLOC", NULL);
+		ft_error(a, NULL);
 	i = -1;
 	while (++i < size)
 	{
