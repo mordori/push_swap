@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:16 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/05 14:48:09 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/05 15:00:25 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char *argv[])
 	parse_input(argc, argv, a);
 	index_values(a);
 	radix_sort(a);
-	print_stack(a);
 	(vector_free(a), free(a));
 	return (EXIT_SUCCESS);
 }
