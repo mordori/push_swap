@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/02 16:27:41 by myli-pen          #+#    #+#              #
-#    Updated: 2025/08/05 01:22:42 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/08/05 14:48:37 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=push_swap
 
 LIBFT		=$(DIR_LIBFT)libft.a
 
-VECTOR_SIZE	=1024
+VECTOR_SIZE	=512
 
 CC			=cc
 CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3

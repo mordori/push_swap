@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 23:46:46 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/05 11:48:51 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void	parse_input(int argc, char *argv[], t_vector *a);
 void	radix_sort(t_vector *a);
 void	ft_error(t_vector *a, t_vector *b);
 void	index_values(t_vector *a);
+void	print_stack(t_vector *a);
 
 #endif

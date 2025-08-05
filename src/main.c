@@ -6,13 +6,11 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:16 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 23:57:12 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/05 14:48:09 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static inline void	print_stack(t_vector *a);
 
 int	main(int argc, char *argv[])
 {
@@ -26,22 +24,20 @@ int	main(int argc, char *argv[])
 	parse_input(argc, argv, a);
 	index_values(a);
 	radix_sort(a);
-	vector_free(a);
-	free(a);
+	print_stack(a);
+	(vector_free(a), free(a));
 	return (EXIT_SUCCESS);
 }
 
 void	ft_error(t_vector *a, t_vector *b)
 {
+	(vector_free(b), free(b));
+	(vector_free(a), free(a));
 	ft_putendl_fd("Error", STDERR_FILENO);
-	vector_free(b);
-	vector_free(a);
-	free(b);
-	free(a);
 	exit(EXIT_FAILURE);
 }
 
-static inline void	print_stack(t_vector *a)
+void	print_stack(t_vector *a)
 {
 	int	i;
 

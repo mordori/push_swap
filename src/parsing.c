@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:46:37 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 23:47:49 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/05 14:43:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static inline void	check_duplicates(t_vector *a, size_t i)
 {
 	int			*hash_table;
 	bool		*used;
-	int			val;
+	int32_t		val;
 	uint32_t	idx;
 	size_t		prime;
 

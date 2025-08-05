@@ -6,13 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:20:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/04 23:56:18 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/05 13:48:06 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static inline void	insert_sort(t_pair *arr, size_t size);
+static inline void	insertion_sort(t_pair *arr, size_t size);
 
 void	index_values(t_vector *a)
 {
@@ -21,7 +21,7 @@ void	index_values(t_vector *a)
 	t_pair	*temp;
 
 	size = vector_total(a);
-	temp = malloc(sizeof(*temp) * size);
+	temp = malloc(sizeof (*temp) * size);
 	if (!temp)
 		ft_error(a, NULL);
 	i = -1;
@@ -30,7 +30,7 @@ void	index_values(t_vector *a)
 		temp[i].value = ((t_pair *)vector_get(a, i))->value;
 		temp[i].index = i;
 	}
-	insert_sort(temp, size);
+	insertion_sort(temp, size);
 	i = -1;
 	while (++i < size)
 		temp[temp[i].index].value = i;
@@ -40,7 +40,7 @@ void	index_values(t_vector *a)
 	free(temp);
 }
 
-static inline void	insert_sort(t_pair *arr, size_t size)
+static inline void	insertion_sort(t_pair *arr, size_t size)
 {
 	size_t	i;
 	size_t	j;
