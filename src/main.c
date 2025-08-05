@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:16 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/05 15:00:25 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 02:30:04 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,33 @@
 int	main(int argc, char *argv[])
 {
 	t_vector	*a;
+	t_vector	*b;
 
 	if (argc < 2)
 		return (EXIT_SUCCESS);
 	a = malloc(sizeof (*a));
 	if (!a || !vector_init(a, true, false))
-		(free(a), ft_error(NULL, NULL));
+		ft_error(a, NULL);
 	parse_input(argc, argv, a);
 	index_values(a);
-	radix_sort(a);
-	(vector_free(a), free(a));
+	b = malloc(sizeof (t_vector));
+	if (!b || !vector_init(b, true, false))
+		ft_error(a, b);
+	radix_sort(a, b);
+	free_vectors(a, b);
 	return (EXIT_SUCCESS);
 }
 
 void	ft_error(t_vector *a, t_vector *b)
 {
-	(vector_free(b), free(b));
-	(vector_free(a), free(a));
+	free_vectors(a, b);
 	ft_putendl_fd("Error", STDERR_FILENO);
 	exit(EXIT_FAILURE);
+}
+
+void	free_vectors(t_vector *a, t_vector *b)
+{
+	vector_free(a, b, NULL);
 }
 
 void	print_stack(t_vector *a)

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:49:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/05 14:29:40 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 01:55:35 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,28 @@
 
 static inline int32_t	max_index_bits(t_vector *a);
 
-void	radix_sort(t_vector *a)
+void	radix_sort(t_vector *a, t_vector *b)
 {
-	t_vector		*b;
-	static int32_t	i;
-	size_t			j;
-	size_t			size;
-	int32_t			index;
+	int32_t	i;
+	size_t	size;
+	t_pair	*pair;
 
-	b = malloc(sizeof (t_vector));
-	if (!b || !vector_init(b, true, false))
-		(free(b), ft_error(a, NULL));
-	while (i++ < max_index_bits(a))
+	i = 0;
+	while (i < max_index_bits(a))
 	{
-		j = 0;
 		size = vector_total(a);
-		while (j++ < size)
+		while (size--)
 		{
-			index = ((t_pair *)vector_getlast(a))->index;
-			if (((index >> (i - 1)) & 1) == 0)
+			pair = (t_pair *)vector_getlast(a);
+			if (((pair->index >> i) & 1) == 0)
 				pb(a, b);
 			else
 				ra(a, b);
 		}
 		while (vector_total(b))
 			pa(a, b);
+		++i;
 	}
-	(vector_free(b), free(b));
 }
 
 static inline int32_t	max_index_bits(t_vector *a)
@@ -48,13 +43,15 @@ static inline int32_t	max_index_bits(t_vector *a)
 	size_t	i;
 	int32_t	bits;
 	int32_t	max;
+	t_pair	*pair;
 
 	i = 0;
 	max = -1;
 	bits = 0;
 	while (i < vector_total(a))
 	{
-		max = ft_imax(max, ((t_pair *)vector_get(a, i))->index);
+		pair = (t_pair *)vector_get(a, i);
+		max = ft_imax(max, pair->index);
 		++i;
 	}
 	while (max >> bits)
