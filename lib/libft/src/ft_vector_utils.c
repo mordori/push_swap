@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 00:29:15 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 19:57:23 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static inline bool	vector_resize(t_vector *vec, size_t size)
 	void	**items;
 	size_t	i;
 
-	items = malloc(sizeof (void *) * size);
+	items = malloc(sizeof(void *) * size);
 	if (!items)
 		return (false);
 	i = 0;

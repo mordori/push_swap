@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:00:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 02:31:34 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 19:57:20 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	vector_init(t_vector *vec, bool is_heap, bool is_shrink)
 	vec->size = 0;
 	vec->is_heap = false;
 	vec->is_shrink = true;
-	vec->items = malloc(sizeof (void *) * VECTOR_SIZE);
+	vec->items = malloc(sizeof(void *) * VECTOR_SIZE);
 	if (!vec->items)
 		return (false);
 	vec->size = VECTOR_SIZE;

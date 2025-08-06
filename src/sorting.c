@@ -6,13 +6,18 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:49:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 01:55:35 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 20:03:51 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static inline int32_t	max_index_bits(t_vector *a);
+
+void	small_sort(t_vector *a, t_vector *b)
+{
+
+}
 
 void	radix_sort(t_vector *a, t_vector *b)
 {

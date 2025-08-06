@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:46:37 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/05 23:51:15 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 19:57:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static inline void	parse_numbers(t_vector *a, char **elems)
 	while (--i >= 0)
 	{
 		end = 'e';
-		pair = malloc(sizeof (*pair));
+		pair = malloc(sizeof(*pair));
 		if (!pair)
 			error_parse(elems, NULL, a);
 		pair->index = -1;
@@ -71,8 +71,8 @@ static inline void	check_duplicates(t_vector *a, size_t i, size_t prime)
 	uint32_t	idx;
 
 	prime = next_prime(vector_total(a) * 2);
-	hash_table = ft_calloc(prime, sizeof (*hash_table));
-	used = ft_calloc(prime, sizeof (*used));
+	hash_table = ft_calloc(prime, sizeof(*hash_table));
+	used = ft_calloc(prime, sizeof(*used));
 	if (!hash_table || !used)
 		error_hash(hash_table, used, a);
 	while (i < vector_total(a))
