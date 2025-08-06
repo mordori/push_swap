@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:20:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 02:25:30 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:55:03 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	index_values(t_vector *a)
 		temp[i].index = i;
 		++i;
 	}
-	if (is_descending(temp, size))
+	if (size < 2 || is_descending(temp, size))
 	{
 		free(temp);
-		free_vectors(a, NULL);
+		vector_free(a, NULL);
 		exit(EXIT_SUCCESS);
 	}
 	insertion_sort(temp, size);

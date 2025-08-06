@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:16 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 02:30:04 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:50:53 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,15 @@ int	main(int argc, char *argv[])
 	if (!b || !vector_init(b, true, false))
 		ft_error(a, b);
 	radix_sort(a, b);
-	free_vectors(a, b);
+	vector_free(a, b, NULL);
 	return (EXIT_SUCCESS);
 }
 
 void	ft_error(t_vector *a, t_vector *b)
 {
-	free_vectors(a, b);
+	vector_free(a, b, NULL);
 	ft_putendl_fd("Error", STDERR_FILENO);
 	exit(EXIT_FAILURE);
-}
-
-void	free_vectors(t_vector *a, t_vector *b)
-{
-	vector_free(a, b, NULL);
 }
 
 void	print_stack(t_vector *a)
