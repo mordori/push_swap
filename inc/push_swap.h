@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 20:03:56 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/07 02:37:57 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ void	radix_sort(t_vector *a, t_vector *b);
 void	pa(t_vector *a, t_vector *b);
 void	pb(t_vector *a, t_vector *b);
 void	ra(t_vector *a, t_vector *b);
+void	sa(t_vector *a);
+void	rra(t_vector *a, t_vector *b);
 
 #endif

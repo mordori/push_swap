@@ -6,17 +6,32 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:49:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 20:03:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/07 03:04:40 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static inline void	sort_three(t_vector *a, t_vector *b);
 static inline int32_t	max_index_bits(t_vector *a);
 
 void	small_sort(t_vector *a, t_vector *b)
 {
+	size_t	size;
 
+	size = vector_total(a);
+	if (size == 2)
+	{
+		if (((t_pair *)vector_get(a, 0))->index <
+			((t_pair *)vector_get(a, 1))->index)
+			sa(a);
+		return ;
+	}
+	while (vector_total(a) > 3)
+		pb_min(a, b);
+	sort_three(a, b);
+	while (vector_total(b))
+		pa(a, b);
 }
 
 void	radix_sort(t_vector *a, t_vector *b)
@@ -41,6 +56,38 @@ void	radix_sort(t_vector *a, t_vector *b)
 			pa(a, b);
 		++i;
 	}
+}
+
+static inline void	sort_three(t_vector *a, t_vector *b)
+{
+	int32_t	idx0;
+	int32_t	idx1;
+	int32_t	idx2;
+
+	idx2 = ((t_pair *)vector_get(a, 2))->index;
+	idx1 = ((t_pair *)vector_get(a, 1))->index;
+	idx0 = ((t_pair *)vector_get(a, 0))->index;
+	if(idx2 < idx1 && idx2 < idx0 && idx0 < idx1)
+	{
+		rra(a,b);
+		sa(a);
+	}
+	else if(idx1 < idx2 && idx1 < idx0 && idx2 < idx0)
+		sa(a);
+	else if(idx1 < idx2 && idx1 < idx0 && idx0 < idx2)
+		ra(a, b);
+	else if(idx0 < idx2 && idx0 < idx1 && idx2 < idx1)
+		rra(a,b);
+	else if(idx0 < idx2 && idx0 < idx1 && idx1 < idx2)
+	{
+		ra(a,b);
+		sa(a);
+	}
+}
+
+static inline void	pb_min(t_vector *a, t_vector *b)
+{
+
 }
 
 static inline int32_t	max_index_bits(t_vector *a)
