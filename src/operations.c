@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:45:01 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/07 01:02:29 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/07 20:50:42 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	sa(t_vector *a)
 	if (size < 2)
 		return ;
 	temp = (t_pair *)vector_getlast(a);
-	vector_set(a, size - 1, size - 2);
+	vector_set(a, size - 1, vector_get(a, size - 2));
 	vector_set(a, size - 2, temp);
 	ft_putendl_fd("sa", STDOUT_FILENO);
 }

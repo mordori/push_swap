@@ -6,13 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:49:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/07 03:04:40 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/08 01:45:40 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static inline void	sort_three(t_vector *a, t_vector *b);
+static inline void	pb_min(t_vector *a, t_vector *b);
 static inline int32_t	max_index_bits(t_vector *a);
 
 void	small_sort(t_vector *a, t_vector *b)
@@ -58,6 +59,34 @@ void	radix_sort(t_vector *a, t_vector *b)
 	}
 }
 
+static inline void	pb_min(t_vector *a, t_vector *b)
+{
+	size_t	i;
+	size_t	idx;
+	int32_t	min;
+	int32_t	current;
+
+	i = 0;
+	idx = 0;
+	while (i < vector_total(a))
+	{
+		min = ((t_pair *)vector_get(a, idx))->index;
+		current = ((t_pair *)vector_get(a, i))->index;
+		if (current < min)
+			idx = i;
+		++i;
+	}
+	if (idx == 2 && vector_total(a) == 5)
+		ra(a, b);
+	if ((idx == 3 && vector_total(a) == 5) || idx == 2)
+		sa(a);
+	if (idx == 1)
+		rra(a, b);
+	if (idx == 1 || idx == 0)
+		rra(a, b);
+	pb(a, b);
+}
+
 static inline void	sort_three(t_vector *a, t_vector *b)
 {
 	int32_t	idx0;
@@ -83,11 +112,6 @@ static inline void	sort_three(t_vector *a, t_vector *b)
 		ra(a,b);
 		sa(a);
 	}
-}
-
-static inline void	pb_min(t_vector *a, t_vector *b)
-{
-
 }
 
 static inline int32_t	max_index_bits(t_vector *a)

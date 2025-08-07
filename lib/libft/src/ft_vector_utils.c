@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:13:36 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 19:57:23 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/07 23:49:26 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,6 @@ bool	vector_insert(t_vector *vec, void *new, size_t index)
  */
 bool	vector_del(t_vector *vec, size_t index)
 {
-	const size_t	min_size = 4;
-
 	if (!vec || !vec->total || index >= vec->total)
 		return (false);
 	if (vec->is_heap && vec->is_shrink)
@@ -107,7 +105,7 @@ bool	vector_del(t_vector *vec, size_t index)
 		++index;
 	}
 	vec->total--;
-	if (vec->is_shrink && vec->size > min_size && vec->total > 0 && \
+	if (vec->is_shrink && vec->size > VECTOR_SIZE && vec->total > 0 && \
 vec->total == vec->size / 4)
 		if (!vector_resize(vec, vec->size / 2))
 			return (false);

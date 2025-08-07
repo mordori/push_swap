@@ -6,15 +6,13 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/02 16:27:41 by myli-pen          #+#    #+#              #
-#    Updated: 2025/08/05 14:48:37 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/08/07 23:48:26 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=push_swap
 
 LIBFT		=$(DIR_LIBFT)libft.a
-
-VECTOR_SIZE	=512
 
 CC			=cc
 CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3
@@ -56,7 +54,7 @@ $(NAME): $(OBJS)
 	@echo "$(YELLOW) [✔] $(NAME) created$(COLOR)"
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c | $(DIR_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(HEADERS) -D VECTOR_SIZE=$(VECTOR_SIZE)
+	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(HEADERS)
 	@echo "$(GREEN) [+]$(COLOR) compiling $@"
 
 clean:

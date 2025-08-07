@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:16 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 20:27:17 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/07 20:57:30 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ int	main(int argc, char *argv[])
 	b = malloc(sizeof(*b));
 	if (!b || !vector_init(b, true, false))
 		ft_error(a, b);
+	print_stack(a);
 	if (vector_total(a) <= 5)
 		small_sort(a, b);
 	else
 		radix_sort(a, b);
+	print_stack(a);
 	vector_free(a, b, NULL);
 	return (EXIT_SUCCESS);
 }
