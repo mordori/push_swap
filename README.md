@@ -28,7 +28,7 @@ The following are considered errors:
 > ## 🚀 How to use
 - Run the following command to clone the repository and create `push_swap` program
 ``` git
-git clone https://github.com/mordori/push-swap.git push-swap && cd push-swap && make
+git clone https://github.com/mordori/push_swap.git push_swap && cd push_swap && make
 ```
 - Execute the program with numbers in a random order, for example
 ``` bash
