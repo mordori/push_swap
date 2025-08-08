@@ -1,4 +1,4 @@
-# push-swap
+# push_swap
 ## ✨ Features
 Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) in ascending order using indexed LSD [radix sort](https://en.wikipedia.org/wiki/Radix_sort).
 - Uses two LIFO (Last In - First Out) stacks `a` and `b` (vector arrays)
