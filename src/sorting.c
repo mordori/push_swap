@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:49:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/08 01:45:40 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/08 15:01:46 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	small_sort(t_vector *a, t_vector *b)
 	size = vector_total(a);
 	if (size == 2)
 	{
-		if (((t_pair *)vector_get(a, 0))->index <
-			((t_pair *)vector_get(a, 1))->index)
+		if (((t_pair *)vector_get(a, 0))->index < \
+((t_pair *)vector_get(a, 1))->index)
 			sa(a);
 		return ;
 	}
@@ -96,20 +96,20 @@ static inline void	sort_three(t_vector *a, t_vector *b)
 	idx2 = ((t_pair *)vector_get(a, 2))->index;
 	idx1 = ((t_pair *)vector_get(a, 1))->index;
 	idx0 = ((t_pair *)vector_get(a, 0))->index;
-	if(idx2 < idx1 && idx2 < idx0 && idx0 < idx1)
+	if (idx2 < idx1 && idx2 < idx0 && idx0 < idx1)
 	{
-		rra(a,b);
+		rra(a, b);
 		sa(a);
 	}
-	else if(idx1 < idx2 && idx1 < idx0 && idx2 < idx0)
+	else if (idx1 < idx2 && idx1 < idx0 && idx2 < idx0)
 		sa(a);
-	else if(idx1 < idx2 && idx1 < idx0 && idx0 < idx2)
+	else if (idx1 < idx2 && idx1 < idx0 && idx0 < idx2)
 		ra(a, b);
-	else if(idx0 < idx2 && idx0 < idx1 && idx2 < idx1)
-		rra(a,b);
-	else if(idx0 < idx2 && idx0 < idx1 && idx1 < idx2)
+	else if (idx0 < idx2 && idx0 < idx1 && idx2 < idx1)
+		rra(a, b);
+	else if (idx0 < idx2 && idx0 < idx1 && idx1 < idx2)
 	{
-		ra(a,b);
+		ra(a, b);
 		sa(a);
 	}
 }

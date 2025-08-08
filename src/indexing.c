@@ -6,13 +6,13 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:20:54 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 19:59:55 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/08 15:00:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static inline bool	is_descending(t_pair * arr, size_t size);
+static inline bool	is_descending(t_pair *arr, size_t size);
 static inline void	insertion_sort(t_pair *arr, size_t size);
 static inline void	make_indexes(t_vector *a, t_pair *arr, size_t size);
 
@@ -44,7 +44,7 @@ void	index_values(t_vector *a)
 	free(temp);
 }
 
-static inline bool	is_descending(t_pair * arr, size_t size)
+static inline bool	is_descending(t_pair *arr, size_t size)
 {
 	size_t	i;
 
