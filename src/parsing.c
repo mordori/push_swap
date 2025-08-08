@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:46:37 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/06 19:57:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/08 21:37:14 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static inline void	parse_numbers(t_vector *a, char **elems)
 		if (!pair)
 			error_parse(elems, NULL, a);
 		pair->index = -1;
-		val = ft_atol(elems[i], &end);
+		val = ft_strtol(elems[i], &end);
 		if (end || val > INT_MAX || val < INT_MIN)
 			error_parse(elems, pair, a);
 		pair->value = (int32_t)val;
