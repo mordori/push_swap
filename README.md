@@ -1,6 +1,8 @@
 # push_swap
 ## ✨ Features
-Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) in ascending order using indexed least significant digit (LSD) [radix sort](https://en.wikipedia.org/wiki/Radix_sort). The goal of the project was not computational efficiency, but to minimize the number of operations performed.
+Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) in ascending order using indexed least significant digit (LSD) [radix sort](https://en.wikipedia.org/wiki/Radix_sort).
+
+The goal of the project was not computational efficiency, but to minimize the number of operations performed.
 - Uses two LIFO (Last In - First Out) stacks `a` and `b` (vector arrays)
 - Parses and validates user input for duplicates with a hashtable
 - Indexes the numbers using insertion sort
