@@ -5,7 +5,7 @@ Program that sorts a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_
 The goal of the project was not computational efficiency, but to minimize the number of operations performed.
 - Uses two LIFO (Last In — First Out) stacks `a` and `b` (vector arrays)
 - Parses and validates user input for duplicates with a hashtable
-- Indexes the numbers using insertion sort
+- Indexes the numbers using insertion sort with a temporary copy
 - Sorts the stacks with `pb`, `pa`, `sa`, `ra`, and `rra` operations
 - Worst-case [time complexity](https://en.wikipedia.org/wiki/Time_complexity) is $O(n^2)$ with insertion sort as the dominant term
 - [Space complexity](https://en.wikipedia.org/wiki/Space_complexity) is $O(n)$
