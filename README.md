@@ -11,8 +11,6 @@ The goal of the project was not computational efficiency, but to minimize the nu
 - [Space complexity](https://en.wikipedia.org/wiki/Space_complexity) is $O(n)$
 - Very stable — sorts 100 numbers in fewer than 1,100 operations and 500 numbers in fewer than 7000 operations under all conditions
 
-## 📖 Introduction
-
 > [!NOTE]
 > ## 🔡 Input
 ✔ Only `digits` are allowed (with a single sign) as input, separated by `spaces`
@@ -29,11 +27,13 @@ The following are considered errors:
 
 > [!TIP]
 > ## 🚀 How to use
-- Run the following command to clone the repository and create `push_swap` program
+Run the following command to clone the repository and create `push_swap` program
 ``` git
-git clone https://github.com/mordori/push_swap.git push_swap && cd push_swap && make
+git clone https://github.com/mordori/push_swap.git push_swap
+cd push_swap
+make
 ```
-- Execute the program with numbers in a random order, for example
+Execute the program with numbers in a random order, for example
 ``` bash
 ./push_swap -4 7 -102 2 5 0 1 -8
 ```
@@ -52,9 +52,9 @@ or
 > ./push_swap $(shuf -i 0-100 -n 10) | wc -l
 > ```
 
-The program will sort the numbers and print out the called operations.
+- The program will sort the numbers and print out the called operations.
 
-- To delete all of the compiled files, use
+To delete all of the compiled files, use
 ``` Makefile
 make fclean
 ```
