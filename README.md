@@ -27,7 +27,7 @@ The following are considered errors:
 
 > [!TIP]
 > ## 🚀 How to use
-Run the following command to clone the repository and create `push_swap` program
+Run the following commands to clone the repository and create `push_swap` program
 ``` git
 git clone https://github.com/mordori/push_swap.git push_swap
 cd push_swap
