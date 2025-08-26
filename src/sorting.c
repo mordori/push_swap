@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 01:49:14 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/08 15:01:46 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/27 02:13:29 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ static inline void	sort_three(t_vector *a, t_vector *b);
 static inline void	pb_min(t_vector *a, t_vector *b);
 static inline int32_t	max_index_bits(t_vector *a);
 
+/**
+ * @brief Sorts a small stack (2–5 elements) using minimal operations.
+ *
+ * @param a Stack A (vector) to be sorted.
+ * @param b Stack B (vector) used as temporary storage.
+ */
 void	small_sort(t_vector *a, t_vector *b)
 {
 	size_t	size;
@@ -35,6 +41,18 @@ void	small_sort(t_vector *a, t_vector *b)
 		pa(a, b);
 }
 
+/**
+ * @brief Sorts a stack using radix sort on the indices of elements.
+ *
+ * - Iterates over each bit of the maximum index.
+ *
+ * - Pushes elements with 0 in the current bit to stack B, rotates others in A.
+ *
+ * - Moves all elements back from B to A after each bit pass.
+ *
+ * @param a Stack A (vector) to be sorted.
+ * @param b Stack B (vector) used as temporary storage.
+ */
 void	radix_sort(t_vector *a, t_vector *b)
 {
 	int32_t	i;
@@ -59,6 +77,12 @@ void	radix_sort(t_vector *a, t_vector *b)
 	}
 }
 
+/**
+ * @brief Finds and pushes the minimum element from stack A to stack B.
+ *
+ * @param a Stack A (vector) from which the element is pushed.
+ * @param b Stack B (vector) used as temporary storage.
+ */
 static inline void	pb_min(t_vector *a, t_vector *b)
 {
 	size_t	i;
@@ -87,6 +111,12 @@ static inline void	pb_min(t_vector *a, t_vector *b)
 	pb(a, b);
 }
 
+/**
+ * @brief Sorts exactly three elements in stack A using minimal operations.
+ *
+ * @param a Stack A (vector) containing exactly three elements.
+ * @param b Stack B (vector) (used only for error handling).
+ */
 static inline void	sort_three(t_vector *a, t_vector *b)
 {
 	int32_t	idx0;
@@ -114,6 +144,12 @@ static inline void	sort_three(t_vector *a, t_vector *b)
 	}
 }
 
+/**
+ * @brief Determines the number of bits required to represent the largest index.
+ *
+ * @param a Stack A (vector) to examine.
+ * @return Number of bits needed to represent the largest index.
+ */
 static inline int32_t	max_index_bits(t_vector *a)
 {
 	size_t	i;

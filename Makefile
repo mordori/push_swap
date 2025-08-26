@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/02 16:27:41 by myli-pen          #+#    #+#              #
-#    Updated: 2025/08/07 23:48:26 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/08/27 00:53:16 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ LIBFT		=$(DIR_LIBFT)libft.a
 
 CC			=cc
 CFLAGS		=-Wall -Wextra -Werror -Wunreachable-code -O3
-LDFLAGS		=
 MAKEFLAGS	+= --no-print-directory
 
 DIR_LIBFT	=$(DIR_LIB)libft/
@@ -26,7 +25,7 @@ DIR_OBJ		=obj/
 DIR_LIB		=lib/
 DIR_DEP		=dep/
 
-HEADERS		=$(addprefix -I , \
+INCS		=$(addprefix -I , \
 				$(DIR_INC) $(DIR_LIBFT)$(DIR_INC))
 SRCS		=$(addprefix $(DIR_SRC), \
 				main.c parsing.c operations.c sorting.c indexing.c)
@@ -50,11 +49,11 @@ $(LIBFT):
 	@make -C $(DIR_LIBFT)
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 	@echo "$(YELLOW) [✔] $(NAME) created$(COLOR)"
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c | $(DIR_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(HEADERS)
+	@$(CC) $(CFLAGS) -c $< -o $@ -MMD -MP -MF $(patsubst $(DIR_OBJ)%.o, $(DIR_DEP)%.d, $@) $(INCS)
 	@echo "$(GREEN) [+]$(COLOR) compiling $@"
 
 clean:

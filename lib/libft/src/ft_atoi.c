@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:49:20 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/08 21:36:50 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/27 01:58:19 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int64_t	ft_strtol(char *str, char *end)
 	sign = 1;
 	if ((*str == '-' || *str == '+') && *str++ == '-')
 		sign = -1;
+	*end = 'e';
 	number = 0;
 	while (ft_isdigit(*str))
 	{
