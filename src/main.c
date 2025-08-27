@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:16 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/27 01:26:42 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/27 03:07:17 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int	main(int argc, char *argv[])
 	b = malloc(sizeof(*b));
 	if (!b || !vector_init(b, true, false))
 		ft_error(a, b);
-	print_stack(a);
+	print_stack(a, b);
 	if (vector_total(a) <= 5)
 		small_sort(a, b);
 	else
 		radix_sort(a, b);
-	print_stack(a);
+	print_stack(a, b);
 	vector_free(a, b, NULL);
 	return (EXIT_SUCCESS);
 }
@@ -70,12 +70,16 @@ void	ft_error(t_vector *a, t_vector *b)
  *
  * @param a Vector (stack) to be printed.
  */
-void	print_stack(t_vector *a)
+void	print_stack(t_vector *a, t_vector *b)
 {
 	int	i;
 
 	i = vector_total(a) - 1;
 	while (i >= 0)
-		ft_printf("%d ", ((t_pair *)vector_get(a, i--))->value);
-	ft_printf("\n");
+	{
+		if (!ft_printf("%d ", ((t_pair *)vector_get(a, i--))->value))
+			ft_error(a, b);
+	}
+	if (!ft_printf("\n"))
+		ft_error(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:28:30 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/08/07 02:37:57 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/08/27 03:07:26 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_pair
 	int32_t	value;
 }				t_pair;
 
-void	print_stack(t_vector *a);
+void	print_stack(t_vector *a, t_vector *b);
 void	ft_error(t_vector *a, t_vector *b);
 void	parse_input(int argc, char *argv[], t_vector *a);
 void	index_values(t_vector *a);
